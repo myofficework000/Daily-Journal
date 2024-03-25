@@ -1,6 +1,7 @@
 package abhishek.pathak.dailyjournal.screens
 
 import abhishek.pathak.dailyjournal.R
+import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import abhishek.pathak.dailyjournal.ui.theme.GrayBG
 import abhishek.pathak.dailyjournal.ui.theme.JournalTextBlue
 import abhishek.pathak.dailyjournal.ui.theme.dp_0
@@ -35,9 +36,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-internal fun CreateProfile() {
+internal fun CreateProfile(navController: NavController) {
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
@@ -46,12 +49,13 @@ internal fun CreateProfile() {
         val (box) = createRefs()
         Surface(
             shape = RoundedCornerShape(dp_40),
-            modifier = Modifier.constrainAs(box){
-                top.linkTo(parent.top)
-                bottom.linkTo(parent.bottom)
-                start.linkTo(parent.start)
-                end.linkTo(parent.end)
-            }
+            modifier = Modifier
+                .constrainAs(box) {
+                    top.linkTo(parent.top)
+                    bottom.linkTo(parent.bottom)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                }
                 .size(dp_360, dp_420)
         ){
             Box(
@@ -116,7 +120,7 @@ internal fun CreateProfile() {
                             .size(dp_30))
 
 
-                    TextButton(onClick = { /*TODO*/ },
+                    TextButton(onClick = { navController.navigate(NavigationItem.START_JOURNEY.route) },
                         modifier = Modifier
                             .constrainAs(btnGoogle) {
                                 bottom.linkTo(google.bottom)
@@ -149,7 +153,7 @@ internal fun CreateProfile() {
                             .padding(dp_30, dp_20, dp_0, dp_20)
                             .size(dp_30))
 
-                    TextButton(onClick = { /*TODO*/ },
+                    TextButton(onClick = { navController.navigate(NavigationItem.START_JOURNEY.route) },
                         modifier = Modifier
                             .constrainAs(btnApple) {
                                 bottom.linkTo(apple.bottom)
@@ -173,11 +177,13 @@ internal fun CreateProfile() {
                         color = Color.Gray)
 
 
-                    TextButton(onClick = { /*TODO*/ },
-                        modifier = Modifier.constrainAs(btnClose){
-                            end.linkTo(parent.end)
-                            top.linkTo(divider3.bottom)
-                        }.padding(dp_16, dp_10)
+                    TextButton(onClick = { navController.navigate(NavigationItem.START_JOURNEY.route) },
+                        modifier = Modifier
+                            .constrainAs(btnClose) {
+                                end.linkTo(parent.end)
+                                top.linkTo(divider3.bottom)
+                            }
+                            .padding(dp_16, dp_10)
                     ) {    Text(text = stringResource(id = R.string.close),
                             fontSize = sp_16,
                             fontWeight = FontWeight.SemiBold,
@@ -194,5 +200,5 @@ internal fun CreateProfile() {
 @Preview
 @Composable
 private fun CreateProfilePreview() {
-    CreateProfile()
+    CreateProfile(rememberNavController())
 }

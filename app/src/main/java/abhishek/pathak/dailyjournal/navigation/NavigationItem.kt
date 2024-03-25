@@ -9,4 +9,7 @@ sealed class NavigationItem(val route: String) {
     data object START_YOUR_JOURNEY : NavigationItem(Screen.START_YOUR_JOURNEY.name)
     data object LOGIN : NavigationItem(Screen.LOGIN.name)
     data object DASHBOARD : NavigationItem(Screen.DASHBOARD.name)
+    data object KEEP_MEMORY : NavigationItem(Screen.KEEP_MEMORY.name)
+    data object CREATE_PROFILE : NavigationItem(Screen.CREATE_PROFILE.name)
+    data object START_JOURNEY : NavigationItem(Screen.START_JOURNEY.name)
 }

@@ -1,7 +1,10 @@
 package abhishek.pathak.dailyjournal.navigation
 
+import abhishek.pathak.dailyjournal.screens.CreateProfile
 import abhishek.pathak.dailyjournal.screens.DashboardScreen
 import abhishek.pathak.dailyjournal.screens.GetNotifiedScreen
+import abhishek.pathak.dailyjournal.screens.KeepMemoryForever
+import abhishek.pathak.dailyjournal.screens.StartJourney
 import abhishek.pathak.dailyjournal.screens.SyncWifiUI
 import abhishek.pathak.dailyjournal.screens.WelcomeScreen
 import androidx.compose.runtime.Composable
@@ -14,7 +17,7 @@ import androidx.navigation.compose.composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navHostController: NavHostController,
-    startDestination: String = NavigationItem.WELCOME.route
+    startDestination: String = NavigationItem.KEEP_MEMORY.route
 ) {
     NavHost(
         modifier = modifier,
@@ -32,6 +35,15 @@ fun AppNavHost(
         }
         composable(NavigationItem.SYNC_WITH_WIFI.route) {
             SyncWifiUI()
+        }
+        composable(NavigationItem.KEEP_MEMORY.route){
+            KeepMemoryForever(navHostController)
+        }
+        composable(NavigationItem.CREATE_PROFILE.route){
+            CreateProfile(navHostController)
+        }
+        composable(NavigationItem.START_JOURNEY.route){
+            StartJourney()
         }
     }
 }
