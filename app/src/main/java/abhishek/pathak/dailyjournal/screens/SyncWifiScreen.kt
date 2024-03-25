@@ -1,8 +1,10 @@
 package abhishek.pathak.dailyjournal.screens
 
 import abhishek.pathak.dailyjournal.R
+import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import abhishek.pathak.dailyjournal.ui.theme.Blue40
 import abhishek.pathak.dailyjournal.ui.theme.DarkBlue
+import abhishek.pathak.dailyjournal.ui.theme.JournalTextBlue
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,15 +21,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Preview
 @Composable
 fun SyncWifiUIPrev() {
-SyncWifiUI()
+SyncWifiUI(rememberNavController())
 }
 
 @Composable
-fun SyncWifiUI() {
+fun SyncWifiUI(navController:NavController ) {
 
         ConstraintLayout(
             modifier= Modifier
@@ -43,7 +47,7 @@ fun SyncWifiUI() {
                 modifier = Modifier
                     .size(250.dp, 250.dp)
                     .constrainAs(image1) {
-                        top.linkTo(parent.top,200.dp)
+                        top.linkTo(parent.top, 100.dp)
                         start.linkTo(parent.start)
                         end.linkTo(parent.end)
 
@@ -56,7 +60,7 @@ fun SyncWifiUI() {
                 fontSize = 35.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = DarkBlue ,
+                color = JournalTextBlue ,
                 modifier = Modifier.constrainAs(text1) {
                     top.linkTo(image1.bottom, margin = 16.dp)
                     start.linkTo(parent.start)
@@ -64,11 +68,11 @@ fun SyncWifiUI() {
             )
 
             Text(
-                "Allow synchronization on WiFi\nonly. Synchronization will be\npaused on cellular network.",
+                "Allow synchronization on WiFi only. Synchronization will be paused on cellular network.",
                 fontSize = 23.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = DarkBlue,
+                color = JournalTextBlue,
                 modifier = Modifier.constrainAs(text2) {
                     top.linkTo(text1.bottom, margin = 8.dp)
                     start.linkTo(parent.start)
@@ -76,7 +80,7 @@ fun SyncWifiUI() {
                 }
             )
             Button(
-                onClick = { },
+                onClick = {navController.navigate(NavigationItem.PASSCODE.route)},
                 modifier = Modifier.constrainAs(button1) {
                     top.linkTo(text2.bottom, margin = 16.dp)
                     start.linkTo(parent.start)
@@ -88,7 +92,7 @@ fun SyncWifiUI() {
             }
 
             Button(
-                onClick = { },
+                onClick = {navController.navigate(NavigationItem.PASSCODE.route)},
                 modifier = Modifier.constrainAs(button2) {
                     top.linkTo(text2.bottom, margin = 16.dp)
                     start.linkTo(parent.start)

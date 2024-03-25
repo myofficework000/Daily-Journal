@@ -3,6 +3,7 @@ package abhishek.pathak.dailyjournal.screens
 import abhishek.pathak.dailyjournal.R
 import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import abhishek.pathak.dailyjournal.ui.theme.GrayBG
+import abhishek.pathak.dailyjournal.ui.theme.JournalTextBlue
 import abhishek.pathak.dailyjournal.ui.theme.Pink40
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -36,18 +37,18 @@ internal fun WelcomeScreen(navController: NavController) {
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
-            .background(GrayBG)
+            .background(Color.Cyan)
             .padding(20.dp)
     ) {
         val (text1, image1, text2, button1) = createRefs()
 
         Image(
-            painter = painterResource(id = R.drawable.baseline_android_24),
+            painter = painterResource(id = R.drawable.baseline_book_24),
             contentDescription = "Welcome Image",
             modifier = Modifier
                 .size(250.dp, 250.dp)
                 .constrainAs(image1) {
-                    top.linkTo(parent.top, 200.dp)
+                    top.linkTo(parent.top, 100.dp)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 }
@@ -55,11 +56,11 @@ internal fun WelcomeScreen(navController: NavController) {
 
 
         Text(
-            "Welcome to \nJourney!",
+            "Welcome to Journey!",
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold,
             fontFamily = FontFamily.SansSerif,
-            color = Pink40,
+            color = JournalTextBlue,
             modifier = Modifier.constrainAs(text1) {
                 top.linkTo(image1.bottom, margin = 16.dp)
                 start.linkTo(parent.start)
@@ -67,11 +68,11 @@ internal fun WelcomeScreen(navController: NavController) {
         )
 
         Text(
-            "Your diary, your companion. Press \nnext to get started.",
+            "Your diary, your companion. Press next to get started.",
             fontSize = 23.sp,
             fontWeight = FontWeight.Bold,
             fontFamily = FontFamily.SansSerif,
-            color = Color.Black,
+            color = JournalTextBlue,
             modifier = Modifier.constrainAs(text2) {
                 top.linkTo(text1.bottom, margin = 8.dp)
                 start.linkTo(parent.start)
@@ -80,7 +81,7 @@ internal fun WelcomeScreen(navController: NavController) {
         )
         Button(
             onClick = {
-                navController.navigate(NavigationItem.DASHBOARD.route)
+                navController.navigate(NavigationItem.SYNC_WITH_WIFI.route)
             },
             modifier = Modifier.constrainAs(button1) {
                 top.linkTo(text2.bottom, margin = 16.dp)

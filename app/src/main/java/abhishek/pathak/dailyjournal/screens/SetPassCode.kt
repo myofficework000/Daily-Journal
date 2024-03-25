@@ -19,9 +19,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun SetPassCodeScreen() {
+fun SetPassCodeScreen(navController: NavController) {
     var passcode by remember { mutableStateOf("") }
 
     ConstraintLayout(
@@ -33,21 +35,26 @@ fun SetPassCodeScreen() {
 
         Text(
             "SET PASSCODE",
-            Modifier.constrainAs(titleRef) {
-                top.linkTo(parent.top, margin = 32.dp)
-                start.linkTo(parent.start)
-                end.linkTo(parent.end)
-            }.padding(top=50.dp),
+            Modifier
+                .constrainAs(titleRef) {
+                    top.linkTo(parent.top, margin = 32.dp)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                }
+                .padding(top = 50.dp),
             color = DarkBlue,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )
 
-        PasscodeDots(passcode, Modifier.constrainAs(dotsRef) {
-            top.linkTo(titleRef.bottom, margin = 16.dp)
-            start.linkTo(parent.start)
-            end.linkTo(parent.end)
-        }.padding(bottom = 150.dp))
+        PasscodeDots(passcode,
+            Modifier
+                .constrainAs(dotsRef) {
+                    top.linkTo(titleRef.bottom, margin = 16.dp)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                }
+                .padding(bottom = 150.dp))
 
         NumberPad(onNumberClick = { number ->
             when (number) {
@@ -132,5 +139,5 @@ fun TableCell(item: String, onNumberClick: (String) -> Unit) {
 @Preview(showBackground = true)
 @Composable
 fun SetPassCodeScreenPreview() {
-    SetPassCodeScreen()
+    SetPassCodeScreen(rememberNavController())
 }
