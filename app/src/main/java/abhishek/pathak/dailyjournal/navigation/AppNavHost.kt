@@ -4,6 +4,7 @@ import abhishek.pathak.dailyjournal.screens.CreateProfile
 import abhishek.pathak.dailyjournal.screens.DashboardScreen
 import abhishek.pathak.dailyjournal.screens.GetNotifiedScreen
 import abhishek.pathak.dailyjournal.screens.KeepMemoryForever
+import abhishek.pathak.dailyjournal.screens.SetPassCodeScreen
 import abhishek.pathak.dailyjournal.screens.StartJourney
 import abhishek.pathak.dailyjournal.screens.SyncWifiUI
 import abhishek.pathak.dailyjournal.screens.WelcomeScreen
@@ -17,7 +18,7 @@ import androidx.navigation.compose.composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navHostController: NavHostController,
-    startDestination: String = NavigationItem.KEEP_MEMORY.route
+    startDestination: String = NavigationItem.WELCOME.route
 ) {
     NavHost(
         modifier = modifier,
@@ -34,7 +35,7 @@ fun AppNavHost(
             GetNotifiedScreen()
         }
         composable(NavigationItem.SYNC_WITH_WIFI.route) {
-            SyncWifiUI()
+            SyncWifiUI(navHostController)
         }
         composable(NavigationItem.KEEP_MEMORY.route){
             KeepMemoryForever(navHostController)
@@ -44,6 +45,9 @@ fun AppNavHost(
         }
         composable(NavigationItem.START_JOURNEY.route){
             StartJourney()
+        }
+        composable(NavigationItem.PASSCODE.route){
+            SetPassCodeScreen(navHostController)
         }
     }
 }
