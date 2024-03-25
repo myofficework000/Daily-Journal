@@ -3,20 +3,16 @@ package abhishek.pathak.dailyjournal.screens
 import abhishek.pathak.dailyjournal.R
 import abhishek.pathak.dailyjournal.ui.theme.GrayBG
 import abhishek.pathak.dailyjournal.ui.theme.JournalTextBlue
-import abhishek.pathak.dailyjournal.ui.theme.PopUpBGGray
 import abhishek.pathak.dailyjournal.ui.theme.dp_0
 import abhishek.pathak.dailyjournal.ui.theme.dp_10
 import abhishek.pathak.dailyjournal.ui.theme.dp_16
 import abhishek.pathak.dailyjournal.ui.theme.dp_20
 import abhishek.pathak.dailyjournal.ui.theme.dp_30
 import abhishek.pathak.dailyjournal.ui.theme.dp_360
-import abhishek.pathak.dailyjournal.ui.theme.dp_4
 import abhishek.pathak.dailyjournal.ui.theme.dp_40
 import abhishek.pathak.dailyjournal.ui.theme.dp_420
 import abhishek.pathak.dailyjournal.ui.theme.dp_50
 import abhishek.pathak.dailyjournal.ui.theme.dp_6
-import abhishek.pathak.dailyjournal.ui.theme.dp_60
-import abhishek.pathak.dailyjournal.ui.theme.dp_8
 import abhishek.pathak.dailyjournal.ui.theme.sp_16
 import abhishek.pathak.dailyjournal.ui.theme.sp_24
 import androidx.compose.foundation.Image
@@ -26,7 +22,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.AlertDialogDefaults.shape
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -34,7 +29,6 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
