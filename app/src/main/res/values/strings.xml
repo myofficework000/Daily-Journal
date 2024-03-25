@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">DailyJournal</string>
+    <string name="journey_all_cap">JOURNEY</string>
+    <string name="skip">Skip</string>
+    <string name="close">Close</string>
+
+    //Keep Memories Screen
+    <string name="keep_memory_title">Keep Your Memories Forever.</string>
+    <string name="keep_memory_subtitle">It\'s free to sync your memories &amp; see them on any of the devices.</string>
+    <string name="link_account">Link Account</string>
+    <string name="term_of_use">Term Of Use</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="keep_memory_img">keep memory image</string>
+    <string name="menu_img">menu icon</string>
+    <string name="info_img">info icon</string>
+
+    //Create Profile Screen
+    <string name="create_profile_title">Create a Journey Profile.</string>
+    <string name="create_profile_subtitle">Link your memories across multiple devices.</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_with_apple">Sign in with APPLE</string>
+    <string name="devices">devices</string>
+
+    //Start Journey Screen
+    <string name="start_journey_title">Start Your Journey Toward A Better You</string>
+    <string name="detail1">Exclusive access to Journey on mobile, desktop and web</string>
+    <string name="detail2">10GB of storage size, 3000 \nentries and backups in Journey Cloud Sync Drive.</string>
+    <string name="detail3">Shared Journal, End-to-end Encryption (Journey Cloud Sync)</string>
+    <string name="detail4">Brand new inspiration quotes everyday</string>
+    <string name="detail5">Compose journal entry in email wherever you go</string>
+    <string name="text_free">TRY 3 DAYS FOR FREE</string>
+    <string name="continue_btn">Continue</string>
+    <string name="check">check icon</string>
+    <string name="fee_detail">CHF 45.00/YEAR BILLED ANNUALLY.\nCANCEL ANYTIME.</string>
+
 </resources>
