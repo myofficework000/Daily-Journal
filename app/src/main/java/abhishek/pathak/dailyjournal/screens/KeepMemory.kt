@@ -10,9 +10,9 @@ import abhishek.pathak.dailyjournal.ui.theme.dp_16
 import abhishek.pathak.dailyjournal.ui.theme.dp_24
 import abhishek.pathak.dailyjournal.ui.theme.dp_28
 import abhishek.pathak.dailyjournal.ui.theme.dp_30
-import abhishek.pathak.dailyjournal.ui.theme.dp_300
 import abhishek.pathak.dailyjournal.ui.theme.dp_34
 import abhishek.pathak.dailyjournal.ui.theme.dp_40
+import abhishek.pathak.dailyjournal.ui.theme.dp_60
 import abhishek.pathak.dailyjournal.ui.theme.dp_80
 import abhishek.pathak.dailyjournal.ui.theme.sp_18
 import abhishek.pathak.dailyjournal.ui.theme.sp_20
@@ -25,7 +25,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedButton
@@ -48,20 +47,19 @@ fun KeepMemoryForever(){
             .fillMaxSize()
             .background(JournalBackgroundBlue)
     ){
-        val (text_title, text_subtitle, btn_linkAcc, btn_Skip, btn_termOfUse, btn_privacy) = createRefs()
+        val (textTitle, textSubtitle, btnLinkacc, btnSkip, btnTermOfUse, btnPrivacy) = createRefs()
         val (termOfUse, privacy) = createRefs()
-        val (img_header, img_termOfUse, img_privacy) = createRefs()
+        val (imgHeader, imgTermofuse, imgPrivacy) = createRefs()
 
         Image(painter = painterResource(id = R.drawable.keep_memory_svg),
             contentDescription = stringResource(id = R.string.keep_memory_img),
             modifier = Modifier
-                .constrainAs(img_header) {
+                .constrainAs(imgHeader) {
                     top.linkTo(parent.top)
-                    bottom.linkTo(text_title.top)
+                    bottom.linkTo(textTitle.top)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
-                }
-                .size(dp_300))
+                }.padding(dp_60))
 
         Text(text = stringResource(id = R.string.keep_memory_title),
             fontSize = sp_40,
@@ -69,7 +67,7 @@ fun KeepMemoryForever(){
             lineHeight = sp_60,
             color = JournalTextBlue,
             modifier = Modifier
-                .constrainAs(text_title) {
+                .constrainAs(textTitle) {
                     start.linkTo(parent.start)
                     top.linkTo(parent.top)
                     bottom.linkTo(parent.bottom)
@@ -83,9 +81,9 @@ fun KeepMemoryForever(){
             lineHeight = sp_30,
             color = JournalTextBlue,
             modifier = Modifier
-                .constrainAs(text_subtitle) {
+                .constrainAs(textSubtitle) {
                     start.linkTo(parent.start)
-                    top.linkTo(text_title.bottom)
+                    top.linkTo(textTitle.bottom)
                 }
                 .padding(dp_28, dp_10))
 
@@ -94,10 +92,10 @@ fun KeepMemoryForever(){
             colors = ButtonDefaults.buttonColors(JournalTextBlue),
             contentPadding = PaddingValues(dp_34, dp_12),
             modifier = Modifier
-                .constrainAs(btn_linkAcc) {
+                .constrainAs(btnLinkacc) {
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
-                    top.linkTo(text_subtitle.bottom)
+                    top.linkTo(textSubtitle.bottom)
                 }
                 .padding(dp_0, dp_16)
 
@@ -112,8 +110,8 @@ fun KeepMemoryForever(){
         OutlinedButton(onClick = { /*TODO*/ },
             colors = ButtonDefaults.buttonColors(JournalBackgroundBlue),
             contentPadding = PaddingValues(dp_40, dp_10),
-            modifier = Modifier.constrainAs(btn_Skip){
-                top.linkTo(btn_linkAcc.bottom)
+            modifier = Modifier.constrainAs(btnSkip){
+                top.linkTo(btnLinkacc.bottom)
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
             }
@@ -135,7 +133,7 @@ fun KeepMemoryForever(){
             Image(painter = painterResource(id = R.drawable.baseline_menu_book_24),
                 contentDescription = stringResource(id = R.string.menu_img),
                 modifier = Modifier
-                    .constrainAs(img_termOfUse) {
+                    .constrainAs(imgTermofuse) {
                         start.linkTo(parent.start)
                         top.linkTo(parent.top)
                         bottom.linkTo(parent.bottom)
@@ -143,8 +141,8 @@ fun KeepMemoryForever(){
 
             TextButton(onClick = {},
                 modifier = Modifier
-                    .constrainAs(btn_termOfUse) {
-                        start.linkTo(img_privacy.end)
+                    .constrainAs(btnTermOfUse) {
+                        start.linkTo(imgPrivacy.end)
                         end.linkTo(parent.end)
                         top.linkTo(parent.top)
                         bottom.linkTo(parent.bottom)
@@ -170,15 +168,15 @@ fun KeepMemoryForever(){
             Image(painter = painterResource(id = R.drawable.baseline_info_outline_24),
                 contentDescription = stringResource(id = R.string.info_img),
                 modifier = Modifier
-                    .constrainAs(img_privacy) {
+                    .constrainAs(imgPrivacy) {
                         start.linkTo(parent.start)
                         top.linkTo(parent.top)
                         bottom.linkTo(parent.bottom)
                     })
 
             TextButton(onClick = {},
-                modifier = Modifier.constrainAs(btn_privacy){
-                    start.linkTo(img_privacy.end)
+                modifier = Modifier.constrainAs(btnPrivacy){
+                    start.linkTo(imgPrivacy.end)
                     end.linkTo(parent.end)
                     top.linkTo(parent.top)
                     bottom.linkTo(parent.bottom)
