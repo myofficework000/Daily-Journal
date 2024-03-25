@@ -8,6 +8,5 @@ fun IntroScreen() {
     SetPassCodeScreen()
     SyncWifiUI()
     Welcome()
-    JourneyCompanionScreen()
+    //JourneyCompanionScreen()
 }
-

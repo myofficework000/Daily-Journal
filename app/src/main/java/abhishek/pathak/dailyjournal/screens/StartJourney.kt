@@ -38,7 +38,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 
 @Composable
-fun StartJourney() {
+internal fun StartJourney() {
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
