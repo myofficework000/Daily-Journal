@@ -3,7 +3,6 @@ package abhishek.pathak.dailyjournal.ui.theme
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-
 val dp_0 = 0.dp
 val dp_4 = 4.dp
 val dp_6 = 6.dp

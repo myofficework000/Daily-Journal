@@ -36,33 +36,35 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 
 @Composable
-fun CreateProfile(){
-    
+internal fun CreateProfile() {
     ConstraintLayout(
-        modifier = Modifier.fillMaxSize()
-            .background(GrayBG)) {
+        modifier = Modifier
+            .fillMaxSize()
+            .background(GrayBG)
+    ) {
         val (box) = createRefs()
-        Box(modifier = Modifier.constrainAs(box){
-            top.linkTo(parent.top)
-            bottom.linkTo(parent.bottom)
-            start.linkTo(parent.start)
-            end.linkTo(parent.end)
-        }
-            .size(dp_360, dp_420)
-            .background(PopUpBGGray),
-        ){
+        Box(
+            modifier = Modifier
+                .constrainAs(box) {
+                    top.linkTo(parent.top)
+                    bottom.linkTo(parent.bottom)
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                }
+                .size(dp_360, dp_420)
+                .background(PopUpBGGray),
+        ) {
             ConstraintLayout {
 
-                val (img_title, text_title, text_subtitle) = createRefs()
+                val (imgTitle, textTitle, textSubtitle) = createRefs()
                 val (divider1, divider2, divider3) = createRefs()
                 val (google, apple) = createRefs()
-                val (btn_google, btn_apple, btn_close) = createRefs()
-
+                val (btnGoogle, btnApple, btnClose) = createRefs()
 
                 Image(painter = painterResource(id = R.drawable.baseline_devices_other_24),
                     contentDescription = stringResource(id = R.string.devices),
                     modifier = Modifier
-                        .constrainAs(img_title) {
+                        .constrainAs(imgTitle) {
                             top.linkTo(parent.top)
                             start.linkTo(parent.start)
                             end.linkTo(parent.end)
@@ -70,13 +72,12 @@ fun CreateProfile(){
                         .padding(dp_0, dp_30)
                         .size(dp_30))
 
-
                 Text(text = stringResource(id = R.string.create_profile_title),
                     fontSize = sp_24,
                     fontWeight = FontWeight.SemiBold,
                     modifier = Modifier
-                        .constrainAs(text_title) {
-                            top.linkTo(img_title.bottom)
+                        .constrainAs(textTitle) {
+                            top.linkTo(imgTitle.bottom)
                             start.linkTo(parent.start)
                             end.linkTo(parent.end)
                         }
@@ -87,8 +88,8 @@ fun CreateProfile(){
                     fontSize = sp_16,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
-                        .constrainAs(text_subtitle) {
-                            top.linkTo(text_title.bottom)
+                        .constrainAs(textSubtitle) {
+                            top.linkTo(textTitle.bottom)
                             start.linkTo(parent.start)
                             end.linkTo(parent.end)
                         }
@@ -96,7 +97,7 @@ fun CreateProfile(){
 
                 Divider(modifier = Modifier
                     .constrainAs(divider1) {
-                        top.linkTo(text_subtitle.bottom)
+                        top.linkTo(textSubtitle.bottom)
                     }
                     .padding(dp_20, dp_20, dp_20, dp_0),
                     color = Color.Gray)
@@ -114,14 +115,15 @@ fun CreateProfile(){
 
                 TextButton(onClick = { /*TODO*/ },
                     modifier = Modifier
-                    .constrainAs(btn_google) {
-                        bottom.linkTo(google.bottom)
-                        top.linkTo(google.top)
-                        start.linkTo(google.end)
-                        end.linkTo(parent.end)
-                    }
-                    .padding(dp_0, dp_0, dp_50, dp_0)) {
-                    Text(text = stringResource(id = R.string.sign_in_with_google),
+                        .constrainAs(btnGoogle) {
+                            bottom.linkTo(google.bottom)
+                            top.linkTo(google.top)
+                            start.linkTo(google.end)
+                            end.linkTo(parent.end)
+                        }
+                        .padding(dp_0, dp_0, dp_50, dp_0)) {
+                    Text(
+                        text = stringResource(id = R.string.sign_in_with_google),
                         fontSize = sp_16,
                         color = Color.Black,
                         fontWeight = FontWeight.Bold
@@ -147,17 +149,19 @@ fun CreateProfile(){
 
                 TextButton(onClick = { /*TODO*/ },
                     modifier = Modifier
-                        .constrainAs(btn_apple) {
+                        .constrainAs(btnApple) {
                             bottom.linkTo(apple.bottom)
                             top.linkTo(apple.top)
                             start.linkTo(apple.end)
                             end.linkTo(parent.end)
                         }
                         .padding(dp_0, dp_0, dp_50, dp_0)) {
-                    Text(text = stringResource(id = R.string.sign_in_with_apple),
+                    Text(
+                        text = stringResource(id = R.string.sign_in_with_apple),
                         fontSize = sp_16,
                         fontWeight = FontWeight.Bold,
-                        color = Color.Black)
+                        color = Color.Black
+                    )
                 }
 
                 Divider(modifier = Modifier
@@ -167,21 +171,24 @@ fun CreateProfile(){
                     .padding(dp_20, dp_0),
                     color = Color.Gray)
 
-
                 TextButton(onClick = { /*TODO*/ },
-                    modifier = Modifier.constrainAs(btn_close){
-                        end.linkTo(parent.end)
-                        top.linkTo(divider3.bottom)
-                    }.padding(dp_16, dp_10)) {
-                    Text(text = stringResource(id = R.string.close),
+                    modifier = Modifier
+                        .constrainAs(btnClose) {
+                            end.linkTo(parent.end)
+                            top.linkTo(divider3.bottom)
+                        }
+                        .padding(dp_16, dp_10)
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.close),
                         fontSize = sp_16,
                         fontWeight = FontWeight.SemiBold,
-                        color = JournalTextBlue)
+                        color = JournalTextBlue
+                    )
                 }
             }
         }
     }
-
 }
 
 @Preview

@@ -41,13 +41,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 
 @Composable
-fun KeepMemoryForever(){
+fun KeepMemoryForever() {
 
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
             .background(JournalBackgroundBlue)
-    ){
+    ) {
         val (text_title, text_subtitle, btn_linkAcc, btn_Skip, btn_termOfUse, btn_privacy) = createRefs()
         val (termOfUse, privacy) = createRefs()
         val (img_header, img_termOfUse, img_privacy) = createRefs()
@@ -77,7 +77,7 @@ fun KeepMemoryForever(){
                 .padding(dp_28, dp_0, dp_80, dp_0)
         )
 
-        Text( text = stringResource(id = R.string.keep_memory_subtitle),
+        Text(text = stringResource(id = R.string.keep_memory_subtitle),
             fontSize = sp_20,
             fontWeight = FontWeight.Bold,
             lineHeight = sp_30,
@@ -102,26 +102,30 @@ fun KeepMemoryForever(){
                 .padding(dp_0, dp_16)
 
         ) {
-            Text(text = stringResource(id = R.string.link_account),
+            Text(
+                text = stringResource(id = R.string.link_account),
                 fontSize = sp_24,
                 color = Color.White,
-                fontWeight = FontWeight.Bold)
+                fontWeight = FontWeight.Bold
+            )
         }
 
 
         OutlinedButton(onClick = { /*TODO*/ },
             colors = ButtonDefaults.buttonColors(JournalBackgroundBlue),
             contentPadding = PaddingValues(dp_40, dp_10),
-            modifier = Modifier.constrainAs(btn_Skip){
+            modifier = Modifier.constrainAs(btn_Skip) {
                 top.linkTo(btn_linkAcc.bottom)
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
             }
         ) {
-            Text(text = stringResource(id = R.string.skip),
+            Text(
+                text = stringResource(id = R.string.skip),
                 fontSize = sp_24,
                 fontWeight = FontWeight.Bold,
-                color = JournalTextBlue)
+                color = JournalTextBlue
+            )
         }
 
 
@@ -149,15 +153,15 @@ fun KeepMemoryForever(){
                         top.linkTo(parent.top)
                         bottom.linkTo(parent.bottom)
                     }
-                    .padding(dp_24, dp_0)){
-                Text(text = stringResource(id = R.string.term_of_use),
+                    .padding(dp_24, dp_0)) {
+                Text(
+                    text = stringResource(id = R.string.term_of_use),
                     fontSize = sp_18,
                     fontWeight = FontWeight.Bold,
-                    color = JournalTextBlue,)
+                    color = JournalTextBlue,
+                )
             }
         }
-
-
 
         ConstraintLayout(
             modifier = Modifier
@@ -177,20 +181,21 @@ fun KeepMemoryForever(){
                     })
 
             TextButton(onClick = {},
-                modifier = Modifier.constrainAs(btn_privacy){
+                modifier = Modifier.constrainAs(btn_privacy) {
                     start.linkTo(img_privacy.end)
                     end.linkTo(parent.end)
                     top.linkTo(parent.top)
                     bottom.linkTo(parent.bottom)
-                }){
-                Text(text = stringResource(id = R.string.privacy_policy),
+                }) {
+                Text(
+                    text = stringResource(id = R.string.privacy_policy),
                     fontSize = sp_18,
                     fontWeight = FontWeight.Bold,
-                    color = JournalTextBlue )
+                    color = JournalTextBlue
+                )
             }
         }
     }
-
 }
 
 @Preview
