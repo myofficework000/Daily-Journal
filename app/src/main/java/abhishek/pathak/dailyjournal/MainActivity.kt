@@ -1,6 +1,9 @@
 package abhishek.pathak.dailyjournal
 
+import abhishek.pathak.dailyjournal.screens.CreateProfile
 import abhishek.pathak.dailyjournal.screens.IntroScreen
+import abhishek.pathak.dailyjournal.screens.KeepMemoryForever
+import abhishek.pathak.dailyjournal.screens.StartJourney
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -23,7 +26,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    IntroScreen()
+//                    KeepMemoryForever()
+//                    CreateProfile()
+                    StartJourney()
                 }
             }
         }
