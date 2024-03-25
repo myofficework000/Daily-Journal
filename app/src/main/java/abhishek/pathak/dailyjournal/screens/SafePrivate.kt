@@ -1,5 +1,6 @@
 package abhishek.pathak.dailyjournal.screens
 
+
 import abhishek.pathak.dailyjournal.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -64,38 +65,38 @@ fun SafePrivateScreen() {
 //            color = Color.Blue,
 //            backgroundColor = Color.LightGray
 //        )
-//
-//
-//        val lockImage: Painter = painterResource(R.drawable.onboard_screen2_lock)
-//        Image(
-//            painter = lockImage,
-//            contentDescription = "Lock Image",
-//            modifier = Modifier
-//                .weight(1f)
-//                .fillMaxWidth()
-//                .wrapContentHeight(LineHeightStyle.Alignment.CenterVertically)
-//        )
-//
-//
-//        Text(
-//            text = "Safe & Private.\nYour journal belongs to you. Add passcode to keep your diary private.",
-//            fontFamily = FontFamily.Cursive,
-//            fontSize = 18.sp,
-//            color = Color.Black,
-//            modifier = Modifier.padding(16.dp)
-//        )
-//
-//
-//        Row(
-//            modifier = Modifier.fillMaxWidth().padding(16.dp),
-//            horizontalArrangement = Arrangement.SpaceBetween
-//        ) {
-//            Button(onClick = { /* handle add password */ }) {
-//                Text("Add Passcode")
-//            }
-//            Button(onClick = { /* skip handle */ }) {
-//                Text("Skip")
-//            }
-//        }
+
+
+        val lockImage: Painter = painterResource(R.drawable.onboard_screen2_lock)
+        Image(
+            painter = lockImage,
+            contentDescription = "Lock Image",
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth()
+                .wrapContentHeight(Alignment.CenterVertically)
+        )
+
+
+        Text(
+            text = "Safe & Private.\nYour journal belongs to you. Add passcode to keep your diary private.",
+            fontFamily = FontFamily.Cursive,
+            fontSize = 18.sp,
+            color = Color.Black,
+            modifier = Modifier.padding(16.dp)
+        )
+
+
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Button(onClick = { /* handle add password */ }) {
+                Text("Add Passcode")
+            }
+            Button(onClick = { /* skip handle */ }) {
+                Text("Skip")
+            }
+        }
     }
 }
