@@ -43,12 +43,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 
 @Composable
-fun CreateProfile(){
-
-
+internal fun CreateProfile() {
     ConstraintLayout(
-        modifier = Modifier.fillMaxSize()
-            .background(GrayBG)) {
+        modifier = Modifier
+            .fillMaxSize()
+            .background(GrayBG)
+    ) {
         val (box) = createRefs()
         Surface(
             shape = RoundedCornerShape(dp_40),
@@ -68,7 +68,6 @@ fun CreateProfile(){
                     val (divider1, divider2, divider3) = createRefs()
                     val (google, apple) = createRefs()
                     val (btnGoogle, btnApple, btnClose) = createRefs()
-
 
                     Image(painter = painterResource(id = R.drawable.baseline_devices_other_24),
                         contentDescription = stringResource(id = R.string.devices),
@@ -168,8 +167,9 @@ fun CreateProfile(){
                         Text(text = stringResource(id = R.string.sign_in_with_apple),
                             fontSize = sp_16,
                             fontWeight = FontWeight.Bold,
-                            color = Color.Black)
-                    }
+                            color = Color.Black
+                    )
+                }
 
                     Divider(modifier = Modifier
                         .constrainAs(divider3) {
@@ -183,16 +183,16 @@ fun CreateProfile(){
                         modifier = Modifier.constrainAs(btnClose){
                             end.linkTo(parent.end)
                             top.linkTo(divider3.bottom)
-                        }.padding(dp_16, dp_10)) {
-                        Text(text = stringResource(id = R.string.close),
+                        }.padding(dp_16, dp_10)
+                    ) {    Text(text = stringResource(id = R.string.close),
                             fontSize = sp_16,
                             fontWeight = FontWeight.SemiBold,
-                            color = JournalTextBlue)
-                    }
+                            color = JournalTextBlue
+                    )
                 }
             }
         }
-
+}
     }
 
 }

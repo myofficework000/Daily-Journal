@@ -1,7 +1,6 @@
 package abhishek.pathak.dailyjournal.screens
 
 import abhishek.pathak.dailyjournal.R
-import abhishek.pathak.dailyjournal.ui.theme.JournalBackgroundBlue
 import abhishek.pathak.dailyjournal.ui.theme.JournalTextBlue
 import abhishek.pathak.dailyjournal.ui.theme.dp_0
 import abhishek.pathak.dailyjournal.ui.theme.dp_10
@@ -9,7 +8,6 @@ import abhishek.pathak.dailyjournal.ui.theme.dp_16
 import abhishek.pathak.dailyjournal.ui.theme.dp_20
 import abhishek.pathak.dailyjournal.ui.theme.dp_24
 import abhishek.pathak.dailyjournal.ui.theme.dp_30
-import abhishek.pathak.dailyjournal.ui.theme.dp_360
 import abhishek.pathak.dailyjournal.ui.theme.dp_40
 import abhishek.pathak.dailyjournal.ui.theme.dp_46
 import abhishek.pathak.dailyjournal.ui.theme.dp_50
@@ -24,7 +22,6 @@ import abhishek.pathak.dailyjournal.ui.theme.sp_40
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
@@ -41,12 +38,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 
 @Composable
-fun StartJourney(){
+fun StartJourney() {
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
     ) {
-        val (img_ribbon, img_header,text_header, title) = createRefs()
+        val (img_ribbon, img_header, text_header, title) = createRefs()
         val (check1, check2, check3, check4, check5) = createRefs()
         val (detail1, detail2, detail3, detail4, detail5) = createRefs()
         val (divider) = createRefs()
@@ -54,10 +51,9 @@ fun StartJourney(){
 
         Image(painter = painterResource(id = R.drawable.ribbon_svg),
             contentDescription = "ribbon",
-            modifier = Modifier.constrainAs(img_ribbon){
+            modifier = Modifier.constrainAs(img_ribbon) {
                 top.linkTo(parent.top)
             })
-
 
         Image(painter = painterResource(id = R.drawable.baseline_folder_24),
             contentDescription = stringResource(id = R.string.journey_all_cap),
@@ -225,21 +221,22 @@ fun StartJourney(){
                     end.linkTo(parent.end)
                 }
                 .padding(dp_20)) {
-            Text(text = stringResource(id = R.string.continue_btn),
+            Text(
+                text = stringResource(id = R.string.continue_btn),
                 fontSize = sp_30,
-                fontWeight = FontWeight.Bold)
+                fontWeight = FontWeight.Bold
+            )
         }
 
         Text(text = stringResource(id = R.string.fee_detail),
             fontSize = sp_18,
             fontWeight = FontWeight.SemiBold,
             textAlign = TextAlign.Center,
-            modifier = Modifier.constrainAs(text_fee_detail){
+            modifier = Modifier.constrainAs(text_fee_detail) {
                 top.linkTo(btn_continue.bottom)
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
             })
-
     }
 }
 
