@@ -7,7 +7,6 @@ fun IntroScreen() {
     GetStarted()
     SetPassCodeScreen()
     SyncWifiUI()
-    JourneyCompanionScreenPrev()
-    GetNotifiedScreen()
-
+    Welcome()
+    //JourneyCompanionScreen()
 }
