@@ -1,5 +1,6 @@
 package abhishek.pathak.dailyjournal
 
+import abhishek.pathak.dailyjournal.navigation.AppNavHost
 import abhishek.pathak.dailyjournal.screens.StartJourney
 import abhishek.pathak.dailyjournal.ui.theme.DailyJournalTheme
 import android.os.Bundle
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.rememberNavController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +24,8 @@ class MainActivity : ComponentActivity() {
                 ) {
 //                    KeepMemoryForever()
 //                    CreateProfile()
-                    StartJourney()
+                  //  StartJourney()
+                    AppNavHost(navHostController = rememberNavController())
                 }
             }
         }
