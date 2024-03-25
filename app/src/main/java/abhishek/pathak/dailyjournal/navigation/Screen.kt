@@ -8,5 +8,8 @@ enum class Screen {
     JOURNEY_LIFE,
     START_YOUR_JOURNEY,
     LOGIN,
-    DASHBOARD
+    DASHBOARD,
+    KEEP_MEMORY,
+    CREATE_PROFILE,
+    START_JOURNEY
 }

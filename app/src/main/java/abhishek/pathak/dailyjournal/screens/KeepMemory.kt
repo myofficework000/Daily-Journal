@@ -1,6 +1,7 @@
 package abhishek.pathak.dailyjournal.screens
 
 import abhishek.pathak.dailyjournal.R
+import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import abhishek.pathak.dailyjournal.ui.theme.JournalBackgroundBlue
 import abhishek.pathak.dailyjournal.ui.theme.JournalTextBlue
 import abhishek.pathak.dailyjournal.ui.theme.dp_0
@@ -38,9 +39,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun KeepMemoryForever() {
+fun KeepMemoryForever(navController: NavController) {
 
     ConstraintLayout(
         modifier = Modifier
@@ -59,7 +62,8 @@ fun KeepMemoryForever() {
                     bottom.linkTo(textTitle.top)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
-                }.padding(dp_60))
+                }
+                .padding(dp_60))
 
         Text(text = stringResource(id = R.string.keep_memory_title),
             fontSize = sp_40,
@@ -88,7 +92,7 @@ fun KeepMemoryForever() {
                 .padding(dp_28, dp_10))
 
 
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = { navController.navigate(NavigationItem.CREATE_PROFILE.route) },
             colors = ButtonDefaults.buttonColors(JournalTextBlue),
             contentPadding = PaddingValues(dp_34, dp_12),
             modifier = Modifier
@@ -109,7 +113,7 @@ fun KeepMemoryForever() {
         }
 
 
-        OutlinedButton(onClick = { /*TODO*/ },
+        OutlinedButton(onClick = { navController.navigate(NavigationItem.CREATE_PROFILE.route) },
             colors = ButtonDefaults.buttonColors(JournalBackgroundBlue),
             contentPadding = PaddingValues(dp_40, dp_10),
             modifier = Modifier.constrainAs(btnSkip) {
@@ -143,7 +147,7 @@ fun KeepMemoryForever() {
                         bottom.linkTo(parent.bottom)
                     })
 
-            TextButton(onClick = {},
+            TextButton(onClick = {navController.navigate(NavigationItem.CREATE_PROFILE.route)},
                 modifier = Modifier
                     .constrainAs(btnTermOfUse) {
                         start.linkTo(imgPrivacy.end)
@@ -178,7 +182,7 @@ fun KeepMemoryForever() {
                         bottom.linkTo(parent.bottom)
                     })
 
-            TextButton(onClick = {},
+            TextButton(onClick = {navController.navigate(NavigationItem.CREATE_PROFILE.route)},
                 modifier = Modifier.constrainAs(btnPrivacy) {
                     start.linkTo(imgPrivacy.end)
                     end.linkTo(parent.end)
@@ -199,5 +203,5 @@ fun KeepMemoryForever() {
 @Preview
 @Composable
 private fun KeepMemoryForeverPrev() {
-    KeepMemoryForever()
+    KeepMemoryForever(rememberNavController())
 }
