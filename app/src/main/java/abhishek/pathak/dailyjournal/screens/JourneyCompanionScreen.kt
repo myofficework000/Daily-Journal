@@ -34,11 +34,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
+
+@Preview
+@Composable
+fun ShowJourneyCompanionScreenPrev() {
+    JourneyCompanionScreen(rememberNavController())
+
+}
 @Composable
 fun JourneyCompanionScreen(navController: NavController) {
     Column(
@@ -110,11 +116,5 @@ fun JourneyCompanionScreen(navController: NavController) {
     }
 }
 
-    @Preview
-    @Composable
-    fun ShowJourneyCompanionScreenPrev() {
-        Box {
-            JourneyCompanionScreen(rememberNavController())
-        }
-    }
+
 

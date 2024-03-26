@@ -81,7 +81,7 @@ fun LockImage() {
         modifier = Modifier
 //            .weight(1f)
             .fillMaxWidth()
-            .wrapContentHeight(Alignment.CenterVertically)
+            .height(200.dp)
     )
 }
 

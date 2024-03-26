@@ -78,7 +78,7 @@ internal fun WelcomeScreen(navController: NavController) {
         )
         Button(
             onClick = {
-                navController.navigate(NavigationItem.PASSCODE.route)
+                navController.navigate(NavigationItem.JOURNEY_LIFE.route)
             },
             modifier = Modifier.constrainAs(button1) {
                 top.linkTo(text2.bottom, margin = 16.dp)
