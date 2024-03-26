@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DailyJournal</string>
+
+    <string name="congratulations">Congratulations!</string>
+    <string name="journey_availability">You can start using Journey.\nJourney is also available on\ndesktop app &amp; online web.</string>
+    <string name="done">Done</string>
 </resources>
