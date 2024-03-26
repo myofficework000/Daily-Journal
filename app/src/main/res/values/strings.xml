@@ -33,4 +33,9 @@
     <string name="check">check icon</string>
     <string name="fee_detail">CHF 45.00/YEAR BILLED ANNUALLY.\nCANCEL ANYTIME.</string>
 
+    //
+    <string name="Coach">Coach</string>
+    <string name="Heading">Heading</string>
+    <string name="Description">Description</string>
+    <string name="Name">Name</string>
 </resources>
