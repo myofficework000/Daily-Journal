@@ -11,5 +11,6 @@ enum class Screen {
     DASHBOARD,
     KEEP_MEMORY,
     CREATE_PROFILE,
-    START_JOURNEY
+    START_JOURNEY,
+    JOURNALS_LIST
 }
