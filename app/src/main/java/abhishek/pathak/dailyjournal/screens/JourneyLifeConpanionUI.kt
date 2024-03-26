@@ -1,8 +1,16 @@
 package abhishek.pathak.dailyjournal.screens
 
 import abhishek.pathak.dailyjournal.R
+import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import abhishek.pathak.dailyjournal.ui.theme.ColumnBackground
 import abhishek.pathak.dailyjournal.ui.theme.TextColor
+import abhishek.pathak.dailyjournal.ui.theme.dp_16
+import abhishek.pathak.dailyjournal.ui.theme.dp_20
+import abhishek.pathak.dailyjournal.ui.theme.dp_40
+import abhishek.pathak.dailyjournal.ui.theme.dp_400
+import abhishek.pathak.dailyjournal.ui.theme.dp_50
+import abhishek.pathak.dailyjournal.ui.theme.dp_6
+import abhishek.pathak.dailyjournal.ui.theme.sp_20
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -22,14 +30,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun JourneyCompanionScreenPrev() {
+fun JourneyCompanionScreenPrev(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -48,52 +59,52 @@ fun JourneyCompanionScreenPrev() {
                 painter = painterResource(id = R.drawable.baseline_library_books_24),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(50.dp)
-                    .padding(top = 20.dp, end = 5.dp)
+                    .size(dp_50)
+                    .padding(top = dp_20, end = dp_6)
             )
             Text(
-                text = "JOURNEY",
+                text = stringResource(id = R.string.Journey),
                 color = TextColor,
-                fontSize = 20.sp,
+                fontSize = sp_20,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(top = 20.dp)
+                modifier = Modifier.padding(top = dp_20)
             )
         }
         Image(
-            painter = painterResource(id = R.drawable.c7),
+            painter = painterResource(id = R.drawable.hot_air_balloon_svgrepo_com),
             contentDescription = null,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(400.dp)
-                .padding(15.dp)
+                .height(dp_400)
+                .padding(dp_16)
         )
 
 
 
         Text(
-            text = "Your Life Companion",
+            text = stringResource(id = R.string.Life_Companion),
             color = TextColor,
             fontSize = 40.sp,
             fontFamily = FontFamily.Serif,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(15.dp)
+            modifier = Modifier.padding(dp_16)
 
         )
         Text(
-            text = "Journey is a place to keep your memories and confide in privately",
+            text = stringResource(id = R.string.Journey_Line),
             color = TextColor,
-            fontSize = 20.sp,
-            modifier = Modifier.padding(start = 15.dp, end = 15.dp)
+            fontSize = sp_20,
+            modifier = Modifier.padding(start = dp_16, end = dp_16)
 
         )
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate(NavigationItem.GET_NOTIFIED.route) },
             modifier = Modifier
                 .wrapContentHeight()
-                .padding(top = 40.dp),
+                .padding(top = dp_40),
             colors = ButtonDefaults.buttonColors(TextColor)
         ) {
-            Text(text = "Next")
+            Text(text = stringResource(id = R.string.Next))
         }
 
     }
@@ -103,7 +114,7 @@ fun JourneyCompanionScreenPrev() {
     @Composable
     fun ShowJourneyCompanionScreenPrev() {
         Box {
-            JourneyCompanionScreenPrev()
+            JourneyCompanionScreenPrev(rememberNavController())
         }
     }
 

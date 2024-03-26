@@ -1,8 +1,19 @@
 package abhishek.pathak.dailyjournal.screens
 
 import abhishek.pathak.dailyjournal.R
+import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import abhishek.pathak.dailyjournal.ui.theme.ColumnBackground
 import abhishek.pathak.dailyjournal.ui.theme.TextColor
+import abhishek.pathak.dailyjournal.ui.theme.dp_10
+import abhishek.pathak.dailyjournal.ui.theme.dp_16
+import abhishek.pathak.dailyjournal.ui.theme.dp_20
+import abhishek.pathak.dailyjournal.ui.theme.dp_40
+import abhishek.pathak.dailyjournal.ui.theme.dp_400
+import abhishek.pathak.dailyjournal.ui.theme.dp_50
+import abhishek.pathak.dailyjournal.ui.theme.dp_6
+import abhishek.pathak.dailyjournal.ui.theme.sp_16
+import abhishek.pathak.dailyjournal.ui.theme.sp_20
+import abhishek.pathak.dailyjournal.ui.theme.sp_40
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -23,14 +34,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun GetNotifiedScreen() {
+fun GetNotifiedScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -47,15 +61,15 @@ fun GetNotifiedScreen() {
                 painter = painterResource(id = R.drawable.baseline_library_books_24),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(50.dp)
-                    .padding(top = 20.dp, end = 5.dp)
+                    .size(dp_50)
+                    .padding(top = dp_20, end = dp_6)
             )
             Text(
                 text = "JOURNEY",
                 color = TextColor,
-                fontSize = 20.sp,
+                fontSize = sp_20,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(top=20.dp)
+                modifier = Modifier.padding(top= dp_20)
             )
         }
         Image(
@@ -63,42 +77,48 @@ fun GetNotifiedScreen() {
             contentDescription = null,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(400.dp)
-                .padding(15.dp)
+                .height(dp_400)
+                .padding(dp_16)
         )
 
 
 
         Text(
-            text = "Get Notified",
+            text = stringResource(id = R.string.Get_Notified),
             color = TextColor,
-            fontSize = 40.sp,
+            fontSize = sp_40,
             fontFamily = FontFamily.Serif,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(15.dp)
+            modifier = Modifier.padding(dp_16)
 
         )
         Text(
-            text = "Build journaling habits by turning on notifications for reminders, coach prompts and many more",
+            text = stringResource(id = R.string.Journaling_Habits),
             color = TextColor,
-            fontSize = 20.sp,
-            modifier = Modifier.padding(start=15.dp, end=15.dp )
+            fontSize = sp_20,
+            modifier = Modifier.padding(start=dp_16, end=dp_16 )
 
             )
         Button(onClick = { /*TODO*/ },
-            modifier = Modifier.wrapContentHeight().padding(top=40.dp).align(Alignment.CenterHorizontally),
+            modifier = Modifier
+                .wrapContentHeight()
+                .padding(top = dp_40)
+                .align(Alignment.CenterHorizontally),
             colors = ButtonDefaults.buttonColors(TextColor)
         ) {
-            Text(text = "Enable Notifications",
-                fontSize = 20.sp)
+            Text(text = stringResource(id = R.string.Enable_Notifications),
+                fontSize = sp_20)
         }
-        OutlinedButton(onClick = { /*TODO*/ },
-            modifier = Modifier.wrapContentHeight().padding(top=10.dp).align(Alignment.CenterHorizontally),
+        OutlinedButton(onClick = { navController.navigate(NavigationItem.START_YOUR_JOURNEY.route) },
+            modifier = Modifier
+                .wrapContentHeight()
+                .padding(top = dp_10)
+                .align(Alignment.CenterHorizontally),
         ) {
-            Text(text = "Skip",
+            Text(text = stringResource(id = R.string.Skip),
                 color = TextColor,
                 fontWeight = FontWeight.Bold,
-                fontSize = 15.sp)
+                fontSize = sp_16)
         }
 
 
@@ -109,6 +129,6 @@ fun GetNotifiedScreen() {
 @Composable
 fun ShowNotifiedScreen() {
     Box {
-        GetNotifiedScreen()
+        GetNotifiedScreen(rememberNavController())
     }
 }

@@ -3,13 +3,17 @@ package abhishek.pathak.dailyjournal.navigation
 import abhishek.pathak.dailyjournal.screens.CreateProfile
 import abhishek.pathak.dailyjournal.screens.DashboardScreen
 import abhishek.pathak.dailyjournal.screens.GetNotifiedScreen
+import abhishek.pathak.dailyjournal.screens.JourneyCompanionScreenPrev
 import abhishek.pathak.dailyjournal.screens.KeepMemoryForever
+import abhishek.pathak.dailyjournal.screens.ListofJournalsPage
 import abhishek.pathak.dailyjournal.screens.SetPassCodeScreen
 import abhishek.pathak.dailyjournal.screens.StartJourney
+import abhishek.pathak.dailyjournal.screens.StartYourJourneyScreen
 import abhishek.pathak.dailyjournal.screens.SyncWifiUI
 import abhishek.pathak.dailyjournal.screens.WelcomeScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -32,7 +36,7 @@ fun AppNavHost(
             DashboardScreen()
         }
         composable(NavigationItem.GET_NOTIFIED.route) {
-            GetNotifiedScreen()
+            GetNotifiedScreen(navHostController)
         }
         composable(NavigationItem.SYNC_WITH_WIFI.route) {
             SyncWifiUI(navHostController)
@@ -48,6 +52,15 @@ fun AppNavHost(
         }
         composable(NavigationItem.PASSCODE.route){
             SetPassCodeScreen(navHostController)
+        }
+        composable(NavigationItem.START_YOUR_JOURNEY.route){
+            StartYourJourneyScreen(navHostController)
+        }
+        composable(NavigationItem.JOURNEY_LIFE.route){
+           JourneyCompanionScreenPrev(navHostController)
+        }
+        composable(NavigationItem.JOURNALS_LIST.route){
+            ListofJournalsPage()
         }
     }
 }
