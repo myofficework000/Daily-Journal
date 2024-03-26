@@ -12,8 +12,12 @@ import abhishek.pathak.dailyjournal.ui.theme.dp_110
 import abhishek.pathak.dailyjournal.ui.theme.dp_14
 import abhishek.pathak.dailyjournal.ui.theme.dp_140
 import abhishek.pathak.dailyjournal.ui.theme.dp_16
+import abhishek.pathak.dailyjournal.ui.theme.dp_160
+import abhishek.pathak.dailyjournal.ui.theme.dp_164
 import abhishek.pathak.dailyjournal.ui.theme.dp_168
+import abhishek.pathak.dailyjournal.ui.theme.dp_170
 import abhishek.pathak.dailyjournal.ui.theme.dp_172
+import abhishek.pathak.dailyjournal.ui.theme.dp_18
 import abhishek.pathak.dailyjournal.ui.theme.dp_20
 import abhishek.pathak.dailyjournal.ui.theme.dp_30
 import abhishek.pathak.dailyjournal.ui.theme.dp_34
@@ -144,7 +148,7 @@ fun UserBottomSheet(){
                         fontSize = sp_18,
                         fontWeight = FontWeight.SemiBold,
                         modifier = Modifier.padding(dp_20, dp_0))
-                    Spacer(modifier = Modifier.width(dp_172))
+                    Spacer(modifier = Modifier.width(dp_164))
                     Image(painter = painterResource(id = R.drawable.baseline_chevron_right_24),
                         contentDescription = null)
                 }

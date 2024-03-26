@@ -32,6 +32,7 @@ val dp_110 = 110.dp
 val dp_120 = 120.dp
 val dp_140 = 140.dp
 val dp_160 = 160.dp
+val dp_164 = 164.dp
 val dp_168 = 168.dp
 val dp_170 = 170.dp
 val dp_172 = 172.dp
