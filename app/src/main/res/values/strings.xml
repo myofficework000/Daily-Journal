@@ -55,12 +55,16 @@
     <string name="Cancel_Anytime">CANCEL ANYTIME.</string>
     <string name="Continue">Continue</string>
 
-    //ListofJournalsScreen
+    <string name="Coach">Coach</string>
+    <string name="Heading">Heading</string>
+    <string name="Description">Description</string>
+    <string name="Name">Name</string>
+
+    //List of JournalsScreen
     <string name="search">Search</string>
     <string name="Stories">STORIES</string>
     <string name="Today">Today</string>
     <string name="Throwbacks">Throwbacks</string>
-
 
     //UserBottomSheet
     <string name="user">User</string>
@@ -72,6 +76,4 @@
     <string name="send_a_gift">Send a Gift</string>
     <string name="go_to_web">Go to the Web Version</string>
     <string name="web_link">https://journey.cloud</string>
-
-
 </resources>
