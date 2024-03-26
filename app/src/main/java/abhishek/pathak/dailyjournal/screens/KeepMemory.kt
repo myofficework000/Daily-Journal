@@ -113,7 +113,7 @@ fun KeepMemoryForever(navController: NavController) {
         }
 
 
-        OutlinedButton(onClick = { navController.navigate(NavigationItem.CREATE_PROFILE.route) },
+        OutlinedButton(onClick = { navController.navigate(NavigationItem.GET_NOTIFIED.route) },
             colors = ButtonDefaults.buttonColors(JournalBackgroundBlue),
             contentPadding = PaddingValues(dp_40, dp_10),
             modifier = Modifier.constrainAs(btnSkip) {

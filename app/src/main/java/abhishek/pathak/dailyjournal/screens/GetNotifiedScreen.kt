@@ -109,7 +109,7 @@ fun GetNotifiedScreen(navController: NavController) {
             Text(text = stringResource(id = R.string.Enable_Notifications),
                 fontSize = sp_20)
         }
-        OutlinedButton(onClick = { navController.navigate(NavigationItem.START_YOUR_JOURNEY.route) },
+        OutlinedButton(onClick = { navController.navigate(NavigationItem.SYNC_WITH_WIFI.route) },
             modifier = Modifier
                 .wrapContentHeight()
                 .padding(top = dp_10)

@@ -80,7 +80,7 @@ fun SyncWifiUI(navController:NavController ) {
                 }
             )
             Button(
-                onClick = {navController.navigate(NavigationItem.PASSCODE.route)},
+                onClick = {navController.navigate(NavigationItem.START_YOUR_JOURNEY.route)},
                 modifier = Modifier.constrainAs(button1) {
                     top.linkTo(text2.bottom, margin = 16.dp)
                     start.linkTo(parent.start)
@@ -92,7 +92,7 @@ fun SyncWifiUI(navController:NavController ) {
             }
 
             Button(
-                onClick = {navController.navigate(NavigationItem.PASSCODE.route)},
+                onClick = {navController.navigate(NavigationItem.START_YOUR_JOURNEY.route)},
                 modifier = Modifier.constrainAs(button2) {
                     top.linkTo(text2.bottom, margin = 16.dp)
                     start.linkTo(parent.start)

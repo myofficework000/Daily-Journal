@@ -12,5 +12,6 @@ enum class Screen {
     KEEP_MEMORY,
     CREATE_PROFILE,
     START_JOURNEY,
-    JOURNALS_LIST
+    JOURNALS_LIST,
+    SAFE_PRIVATE
 }

@@ -40,7 +40,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun JourneyCompanionScreenPrev(navController: NavController) {
+fun JourneyCompanionScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -98,7 +98,7 @@ fun JourneyCompanionScreenPrev(navController: NavController) {
 
         )
         Button(
-            onClick = { navController.navigate(NavigationItem.GET_NOTIFIED.route) },
+            onClick = { navController.navigate(NavigationItem.SAFE_PRIVATE.route) },
             modifier = Modifier
                 .wrapContentHeight()
                 .padding(top = dp_40),
@@ -114,7 +114,7 @@ fun JourneyCompanionScreenPrev(navController: NavController) {
     @Composable
     fun ShowJourneyCompanionScreenPrev() {
         Box {
-            JourneyCompanionScreenPrev(rememberNavController())
+            JourneyCompanionScreen(rememberNavController())
         }
     }
 
