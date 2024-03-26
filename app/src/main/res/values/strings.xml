@@ -18,7 +18,7 @@
     <string name="create_profile_title">Create a Journey Profile.</string>
     <string name="create_profile_subtitle">Link your memories across multiple devices.</string>
     <string name="sign_in_with_google">Sign in with Google</string>
-    <string name="sign_in_with_apple">Sign in with APPLE</string>
+    <string name="sign_in_with_apple">Sign in with Apple</string>
     <string name="devices">devices</string>
 
     //Start Journey Screen
@@ -65,4 +65,15 @@
     <string name="Stories">STORIES</string>
     <string name="Today">Today</string>
     <string name="Throwbacks">Throwbacks</string>
+
+    //UserBottomSheet
+    <string name="user">User</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="login">Login</string>
+    <string name="settings">Settings</string>
+    <string name="cloud_services">Cloud Services</string>
+    <string name="addons">Addons</string>
+    <string name="send_a_gift">Send a Gift</string>
+    <string name="go_to_web">Go to the Web Version</string>
+    <string name="web_link">https://journey.cloud</string>
 </resources>
