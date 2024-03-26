@@ -32,6 +32,7 @@
     <string name="continue_btn">Continue</string>
     <string name="check">check icon</string>
     <string name="fee_detail">CHF 45.00/YEAR BILLED ANNUALLY.\nCANCEL ANYTIME.</string>
+
     //Get Notified Screen
     <string name="Get_Notified">Get Notified</string>
     <string name="Journey">JOURNEY</string>
@@ -41,6 +42,7 @@
     <string name="Life_Companion">Your Life Companion</string>
     <string name="Next">Next</string>
     <string name="Journey_Line">Journey is a place to keep your memories and confide in privately</string>
+
     //Start Your Journey Screen
     <string name="Better_You">Start Your Journey Towards a Better You </string>
     <string name="Checkbox_1">Exclusive access to journey on mobile, desktop and web</string>
@@ -53,10 +55,14 @@
     <string name="Cancel_Anytime">CANCEL ANYTIME.</string>
     <string name="Continue">Continue</string>
 
-    //ListofJournalsScreen
+    <string name="Coach">Coach</string>
+    <string name="Heading">Heading</string>
+    <string name="Description">Description</string>
+    <string name="Name">Name</string>
+
+    //List of JournalsScreen
     <string name="search">Search</string>
     <string name="Stories">STORIES</string>
     <string name="Today">Today</string>
     <string name="Throwbacks">Throwbacks</string>
-
 </resources>
