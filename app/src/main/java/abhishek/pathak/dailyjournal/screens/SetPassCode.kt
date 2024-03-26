@@ -2,6 +2,7 @@ package abhishek.pathak.dailyjournal.screens
 
 
 import abhishek.pathak.dailyjournal.R
+import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import abhishek.pathak.dailyjournal.ui.theme.DarkBlue
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -66,7 +67,7 @@ fun SetPassCodeScreen(navController: NavController) {
             top.linkTo(dotsRef.bottom, margin = 32.dp)
             start.linkTo(parent.start)
             end.linkTo(parent.end)
-        })
+        },navController)
     }
 }
 
@@ -91,29 +92,28 @@ fun PasscodeDots(passcode: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun NumberPad(onNumberClick: (String) -> Unit, modifier: Modifier = Modifier) {
+fun NumberPad(onNumberClick: (String) -> Unit, modifier: Modifier = Modifier,nav: NavController) {
     val buttons = listOf(
         "1", "2", "3",
         "4", "5", "6",
         "7", "8", "9",
         "check", "0", "delete"
     )
-
+    val nav= nav
     TableLayout(
         items = buttons,
-        numColumns = 3,
-        modifier = modifier,
-        onNumberClick = onNumberClick
+        numColumns = 3,      onNumberClick = onNumberClick,
+        modifier = modifier, nav
     )
 }
 
 @Composable
-fun TableLayout(items: List<String>, numColumns: Int, onNumberClick: (String) -> Unit, modifier: Modifier = Modifier) {
+fun TableLayout(items: List<String>, numColumns: Int, onNumberClick: (String) -> Unit, modifier: Modifier = Modifier,navController: NavController) {
     Column(modifier = modifier) {
         items.chunked(numColumns).forEach { row ->
             Row {
                 row.forEach { item ->
-                    TableCell(item, onNumberClick)
+                    TableCell(item, onNumberClick, navController)
                 }
             }
         }
@@ -121,7 +121,7 @@ fun TableLayout(items: List<String>, numColumns: Int, onNumberClick: (String) ->
 }
 
 @Composable
-fun TableCell(item: String, onNumberClick: (String) -> Unit) {
+fun TableCell(item: String, onNumberClick: (String) -> Unit,navController: NavController) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -129,8 +129,15 @@ fun TableCell(item: String, onNumberClick: (String) -> Unit) {
             .clickable { onNumberClick(item) }
     ) {
         when (item) {
-            "delete" -> Image(painter = painterResource(id = R.drawable.baseline_cancel_presentation_24), contentDescription = "Delete")
-            "check" -> Image(painter = painterResource(id = R.drawable.baseline_check_24), contentDescription = "Check")
+            "delete" -> Image(painter = painterResource(id = R.drawable.baseline_cancel_presentation_24), contentDescription = "Delete" )
+            "check" ->   Image(
+                painter = painterResource(id = R.drawable.baseline_check_24),
+                contentDescription = "Check",
+                modifier = Modifier
+                    .clickable {
+                        navController.navigate(NavigationItem.KEEP_MEMORY.route)
+                    }
+            )
             else -> Text(text = item, fontSize = 24.sp, color = DarkBlue)
         }
     }

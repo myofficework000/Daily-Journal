@@ -34,13 +34,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
+
+@Preview
 @Composable
-fun JourneyCompanionScreenPrev(navController: NavController) {
+fun ShowJourneyCompanionScreenPrev() {
+    JourneyCompanionScreen(rememberNavController())
+
+}
+@Composable
+fun JourneyCompanionScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -98,7 +104,7 @@ fun JourneyCompanionScreenPrev(navController: NavController) {
 
         )
         Button(
-            onClick = { navController.navigate(NavigationItem.GET_NOTIFIED.route) },
+            onClick = { navController.navigate(NavigationItem.SAFE_PRIVATE.route) },
             modifier = Modifier
                 .wrapContentHeight()
                 .padding(top = dp_40),
@@ -110,11 +116,5 @@ fun JourneyCompanionScreenPrev(navController: NavController) {
     }
 }
 
-    @Preview
-    @Composable
-    fun ShowJourneyCompanionScreenPrev() {
-        Box {
-            JourneyCompanionScreenPrev(rememberNavController())
-        }
-    }
+
 

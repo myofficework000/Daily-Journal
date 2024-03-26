@@ -177,7 +177,7 @@ internal fun CreateProfile(navController: NavController) {
                         color = Color.Gray)
 
 
-                    TextButton(onClick = { navController.navigate(NavigationItem.START_JOURNEY.route) },
+                    TextButton(onClick = { navController.navigate(NavigationItem.GET_NOTIFIED.route) },
                         modifier = Modifier
                             .constrainAs(btnClose) {
                                 end.linkTo(parent.end)

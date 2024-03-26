@@ -3,9 +3,10 @@ package abhishek.pathak.dailyjournal.navigation
 import abhishek.pathak.dailyjournal.screens.CreateProfile
 import abhishek.pathak.dailyjournal.screens.DashboardScreen
 import abhishek.pathak.dailyjournal.screens.GetNotifiedScreen
-import abhishek.pathak.dailyjournal.screens.JourneyCompanionScreenPrev
+import abhishek.pathak.dailyjournal.screens.JourneyCompanionScreen
 import abhishek.pathak.dailyjournal.screens.KeepMemoryForever
 import abhishek.pathak.dailyjournal.screens.ListofJournalsPage
+import abhishek.pathak.dailyjournal.screens.SafePrivateScreen
 import abhishek.pathak.dailyjournal.screens.SetPassCodeScreen
 import abhishek.pathak.dailyjournal.screens.StartJourney
 import abhishek.pathak.dailyjournal.screens.StartYourJourneyScreen
@@ -57,10 +58,13 @@ fun AppNavHost(
             StartYourJourneyScreen(navHostController)
         }
         composable(NavigationItem.JOURNEY_LIFE.route){
-           JourneyCompanionScreenPrev(navHostController)
+            JourneyCompanionScreen(navHostController)
         }
         composable(NavigationItem.JOURNALS_LIST.route){
             ListofJournalsPage()
+        }
+        composable(NavigationItem.SAFE_PRIVATE.route){
+            SafePrivateScreen(navHostController)
         }
     }
 }

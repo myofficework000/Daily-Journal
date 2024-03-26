@@ -2,12 +2,9 @@ package abhishek.pathak.dailyjournal.screens
 
 import abhishek.pathak.dailyjournal.R
 import abhishek.pathak.dailyjournal.navigation.NavigationItem
-import abhishek.pathak.dailyjournal.ui.theme.GrayBG
 import abhishek.pathak.dailyjournal.ui.theme.JournalTextBlue
-import abhishek.pathak.dailyjournal.ui.theme.Pink40
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -81,7 +78,7 @@ internal fun WelcomeScreen(navController: NavController) {
         )
         Button(
             onClick = {
-                navController.navigate(NavigationItem.SYNC_WITH_WIFI.route)
+                navController.navigate(NavigationItem.JOURNEY_LIFE.route)
             },
             modifier = Modifier.constrainAs(button1) {
                 top.linkTo(text2.bottom, margin = 16.dp)

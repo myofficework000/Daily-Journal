@@ -1,11 +1,11 @@
 package abhishek.pathak.dailyjournal.screens
 
 import abhishek.pathak.dailyjournal.R
+import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 
 import androidx.compose.material3.Button
-import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,9 +17,11 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun SafePrivateScreen() {
+fun SafePrivateScreen(navController: NavController) {
     val progress = 0.5f // 50%
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -27,7 +29,8 @@ fun SafePrivateScreen() {
 //        ProgressBar(progress)
         LockImage()
         SafePrivateText()
-        BottomButtons()
+        val nav= navController
+        BottomButtons(nav)
     }
 }
 
@@ -78,7 +81,7 @@ fun LockImage() {
         modifier = Modifier
 //            .weight(1f)
             .fillMaxWidth()
-            .wrapContentHeight(Alignment.CenterVertically)
+            .height(200.dp)
     )
 }
 
@@ -94,17 +97,17 @@ fun SafePrivateText() {
 }
 
 @Composable
-fun BottomButtons() {
+fun BottomButtons(navController: NavController) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Button(onClick = { /* TODO: add password */ }) {
+        Button(onClick = {navController.navigate(NavigationItem.PASSCODE.route) }) {
             Text("Add Passcode")
         }
-        Button(onClick = { /* TODO: Handle skip  */ }) {
+        Button(onClick = { navController.navigate(NavigationItem.KEEP_MEMORY.route)  }) {
             Text("Skip")
         }
     }
@@ -113,6 +116,6 @@ fun BottomButtons() {
 @Preview(showBackground = true, backgroundColor = 0xFFF0EAE2)
 @Composable
 fun SafePrivateScreenPreview() {
-    SafePrivateScreen()
+    SafePrivateScreen(rememberNavController())
 }
 

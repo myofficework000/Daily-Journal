@@ -13,5 +13,6 @@ sealed class NavigationItem(val route: String) {
     data object CREATE_PROFILE : NavigationItem(Screen.CREATE_PROFILE.name)
     data object START_JOURNEY : NavigationItem(Screen.START_JOURNEY.name)
     data object JOURNALS_LIST: NavigationItem(Screen.JOURNALS_LIST.name)
+    data object SAFE_PRIVATE: NavigationItem(Screen.SAFE_PRIVATE.name)
 
 }
