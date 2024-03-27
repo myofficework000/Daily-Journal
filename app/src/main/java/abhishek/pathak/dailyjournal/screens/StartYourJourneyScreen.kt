@@ -23,6 +23,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
@@ -36,7 +38,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
@@ -82,11 +83,7 @@ fun StartYourJourneyScreen(navController: NavController){
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(dp_16)
         )
-        Checkboxes(txt = stringResource(id = R.string.Checkbox_1))
-        Checkboxes(txt = stringResource(id = R.string.Checkbox_2))
-        Checkboxes(txt = stringResource(id = R.string.Checkbox_3))
-        Checkboxes(txt = stringResource(id = R.string.Checkbox_4))
-        Checkboxes(txt = stringResource(id = R.string.Checkbox_5))
+        JourneyList()
         Divider(
             modifier = Modifier.padding(top= dp_20),
             thickness = dp_1
@@ -119,49 +116,76 @@ fun StartYourJourneyScreen(navController: NavController){
                 .padding(top = dp_26)
                 .align(Alignment.CenterHorizontally)
         )
-        Text(
-            text = stringResource(id = R.string.Cancel_Anytime),
-            color = Color.Black,
-            fontSize = sp_16,
-            fontWeight = FontWeight.Bold,
+        Button(onClick = { navController.navigate(NavigationItem.CANCEL_ANYTIME.route)},
             modifier = Modifier
-                .padding(top = dp_6)
-                .align(Alignment.CenterHorizontally)
-        )
+                .wrapContentHeight()
+                .padding(top = 10.dp)
+                .align(Alignment.CenterHorizontally),
+            colors = ButtonDefaults.buttonColors(Color.Transparent)
+        ) {
+            Text(text = stringResource(id = R.string.Cancel_Anytime),
+                fontSize = sp_16,
+                color = Color.Black
+            )
+        }
 
 
 
 
     }
 }
+data class StartJourneyList(val img: Int, val text: Int)
 
+val listJourney= listOf(
+    StartJourneyList(R.drawable.baseline_check_circle_24,
+        R.string.Checkbox_1),
+    StartJourneyList(R.drawable.baseline_check_circle_24,
+        R.string.Checkbox_2),
+    StartJourneyList(R.drawable.baseline_check_circle_24,
+        R.string.Checkbox_3),
+    StartJourneyList(R.drawable.baseline_check_circle_24,
+        R.string.Checkbox_4),
+    StartJourneyList(R.drawable.baseline_check_circle_24,
+        R.string.Checkbox_5)
+)
 @Composable
-fun Checkboxes(img: Int=R.drawable.baseline_check_circle_24,txt: String){
-    Row (
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.Start,
-        verticalAlignment = Alignment.CenterVertically) {
-
-        Image(
-            painter = painterResource(id = img),
-            contentDescription = null,
-            modifier = Modifier
-                .size(dp_50)
-                .padding(top = dp_20, end = dp_6)
-        )
-        Text(
-            text = txt,
-            color = Color.Black,
-            fontSize = sp_20,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(top= dp_20)
-        )
+fun JourneyList() {
+    LazyColumn {
+        items(listJourney) {
+            ItemListJourney(it)
+        }
     }
-
-
 }
+@Composable
+fun ItemListJourney(startJourneyList: StartJourneyList){
+    Column {
+        Row (
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Start,
+            verticalAlignment = Alignment.CenterVertically) {
+
+            Image(
+                painter = painterResource(id =startJourneyList.img),
+                contentDescription = null,
+                modifier = Modifier
+                    .size(dp_50)
+                    .padding(top = dp_20, end = dp_6)
+            )
+            Text(
+                text = stringResource(id = startJourneyList.text),
+                color = Color.Black,
+                fontSize = sp_20,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(top= dp_20)
+            )
+        }
+
+    }
+}
+
 @Preview
 @Composable
 fun ShowCheckBoxes(){
     StartYourJourneyScreen(rememberNavController())
+    //JourneyList()
 }

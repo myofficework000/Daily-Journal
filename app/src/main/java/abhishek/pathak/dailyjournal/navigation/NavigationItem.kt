@@ -15,5 +15,6 @@ sealed class NavigationItem(val route: String) {
     data object JOURNALS_LIST: NavigationItem(Screen.JOURNALS_LIST.name)
     data object SAFE_PRIVATE: NavigationItem(Screen.SAFE_PRIVATE.name)
     data object USER_BOTTOM_SHEET: NavigationItem(Screen.USER_BOTTOM_SHEET.name)
+    data object CANCEL_ANYTIME: NavigationItem(Screen.CANCEL_ANYTIME.name)
 
 }

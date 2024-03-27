@@ -77,8 +77,8 @@ fun GetNotifiedScreen(navController: NavController) {
             contentDescription = null,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(dp_400)
-                .padding(dp_16)
+                .size(350.dp)
+                .padding(dp_20)
         )
 
 

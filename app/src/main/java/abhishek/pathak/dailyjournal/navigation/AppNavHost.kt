@@ -70,5 +70,8 @@ fun AppNavHost(
         composable(NavigationItem.USER_BOTTOM_SHEET.route){
             UserBottomSheetWithLazyList(navHostController)
         }
+        composable(NavigationItem.CANCEL_ANYTIME.route){
+            SafePrivateScreen(navHostController)
+        }
     }
 }

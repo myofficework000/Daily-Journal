@@ -46,6 +46,7 @@ val dp_400 = 400.dp
 val dp_420 = 420.dp
 
 val sp_4 = 4.sp
+val sp_10=10.sp
 val sp_12 = 12.sp
 val sp_15 = 15.sp
 val sp_16 = 16.sp
