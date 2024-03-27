@@ -1,6 +1,7 @@
 package abhishek.pathak.dailyjournal.screens
 
 import abhishek.pathak.dailyjournal.R
+import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import abhishek.pathak.dailyjournal.ui.theme.JournalTextBlue
 import abhishek.pathak.dailyjournal.ui.theme.dp_0
 import abhishek.pathak.dailyjournal.ui.theme.dp_10
@@ -36,9 +37,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-internal fun StartJourney() {
+internal fun StartJourney(navController: NavController) {
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
@@ -211,7 +214,7 @@ internal fun StartJourney() {
                 .padding(dp_0, dp_40, dp_0, dp_0))
 
 
-        Button(onClick = { /*TODO*/ },
+        Button(onClick =  { navController.navigate(NavigationItem.GET_NOTIFIED.route) },
             colors = ButtonDefaults.buttonColors(JournalTextBlue),
             contentPadding = PaddingValues(dp_50, dp_16),
             modifier = Modifier
@@ -243,5 +246,5 @@ internal fun StartJourney() {
 @Preview
 @Composable
 private fun StartJourneyPrev() {
-    StartJourney()
+    StartJourney(rememberNavController())
 }

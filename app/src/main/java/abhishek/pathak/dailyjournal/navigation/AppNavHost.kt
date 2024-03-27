@@ -11,6 +11,7 @@ import abhishek.pathak.dailyjournal.screens.SetPassCodeScreen
 import abhishek.pathak.dailyjournal.screens.StartJourney
 import abhishek.pathak.dailyjournal.screens.StartYourJourneyScreen
 import abhishek.pathak.dailyjournal.screens.SyncWifiUI
+import abhishek.pathak.dailyjournal.screens.UserBottomSheetWithLazyList
 import abhishek.pathak.dailyjournal.screens.WelcomeScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -49,7 +50,7 @@ fun AppNavHost(
             CreateProfile(navHostController)
         }
         composable(NavigationItem.START_JOURNEY.route){
-            StartJourney()
+            StartJourney(navHostController)
         }
         composable(NavigationItem.PASSCODE.route){
             SetPassCodeScreen(navHostController)
@@ -61,10 +62,13 @@ fun AppNavHost(
             JourneyCompanionScreen(navHostController)
         }
         composable(NavigationItem.JOURNALS_LIST.route){
-            ListofJournalsPage()
+            ListofJournalsPage(navHostController)
         }
         composable(NavigationItem.SAFE_PRIVATE.route){
             SafePrivateScreen(navHostController)
+        }
+        composable(NavigationItem.USER_BOTTOM_SHEET.route){
+            UserBottomSheetWithLazyList(navHostController)
         }
     }
 }

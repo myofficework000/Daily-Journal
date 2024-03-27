@@ -13,5 +13,6 @@ enum class Screen {
     CREATE_PROFILE,
     START_JOURNEY,
     JOURNALS_LIST,
-    SAFE_PRIVATE
+    SAFE_PRIVATE,
+    USER_BOTTOM_SHEET
 }
