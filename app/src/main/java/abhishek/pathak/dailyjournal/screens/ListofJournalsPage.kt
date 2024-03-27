@@ -1,6 +1,7 @@
 package abhishek.pathak.dailyjournal.screens
 
 import abhishek.pathak.dailyjournal.R
+import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import abhishek.pathak.dailyjournal.ui.theme.ColumnBackground
 import abhishek.pathak.dailyjournal.ui.theme.InsideAppBackground
 import abhishek.pathak.dailyjournal.ui.theme.dp_10
@@ -11,6 +12,7 @@ import abhishek.pathak.dailyjournal.ui.theme.dp_20
 import abhishek.pathak.dailyjournal.ui.theme.dp_22
 import abhishek.pathak.dailyjournal.ui.theme.dp_25
 import abhishek.pathak.dailyjournal.ui.theme.dp_30
+import abhishek.pathak.dailyjournal.ui.theme.dp_40
 import abhishek.pathak.dailyjournal.ui.theme.dp_50
 import abhishek.pathak.dailyjournal.ui.theme.dp_6
 import abhishek.pathak.dailyjournal.ui.theme.dp_8
@@ -33,6 +35,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -52,10 +55,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 
 @Composable
-fun ListofJournalsPage() {
+fun ListofJournalsPage(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -82,15 +87,19 @@ fun ListofJournalsPage() {
                         .size(dp_50)
                         .padding(top = dp_20, end = dp_6)
                 )
-                Image(painter = painterResource(id = R.drawable.baseline_account_circle_24),
-                    contentDescription = null,
+                IconButton(
+                    onClick = { navController.navigate(NavigationItem.USER_BOTTOM_SHEET.route)},
                     modifier = Modifier
-                        .size(dp_50)
                         .padding(top = dp_20, end = dp_6)
                         .constrainAs(image2) {
                             top.linkTo(parent.top)
-                            end.linkTo(parent.end)
-                        })
+                            end.linkTo(parent.end)}
+                ) {
+                    Image(painter = painterResource(id = R.drawable.baseline_account_circle_24),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(dp_50))
+                }
 
                 Image(painter = painterResource(id = R.drawable.baseline_add_24),
                     contentDescription = null,
@@ -227,7 +236,7 @@ fun Stories(){
     @Composable
     fun ShowListofJournals() {
         Box {
-            ListofJournalsPage()
+            ListofJournalsPage(rememberNavController())
         }
 
 
