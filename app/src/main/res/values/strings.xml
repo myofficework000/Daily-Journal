@@ -81,6 +81,16 @@
     <string name="go_to_web">Go to the Web Version</string>
     <string name="web_link">https://journey.cloud</string>
 
+
+
+    //CoachScreen
+    <string name="Latest_templates">Latest Templates</string>
+    <string name="Find_a_template">Find a template that is best suited for you by serving as your starting framework</string>
+    <string name="Featured_Coaches">Featured Coaches</string>
+    <string name="Find_out">Find out more about the self-care and mindfulness coaches we have on board on Journey.</string>
+    <string name="Latest_program">Latest Programs</string>
+    <string name="Explore_the_latest">Explore the latest journaling programs which daily prompts that can guide your journaling</string>
+
     //Cancel Subscription Popup Screen
     <string name="Spring_into">Spring into self care: 50%</string>
     <string name="description">Elevate your wellbeing this Spring. Upgrade to the limited time membership at up to 50% off. Offer for first time user ends when this card is dismissed</string>
