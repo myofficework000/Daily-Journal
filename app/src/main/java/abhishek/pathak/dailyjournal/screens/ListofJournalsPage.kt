@@ -4,6 +4,7 @@ import abhishek.pathak.dailyjournal.R
 import abhishek.pathak.dailyjournal.navigation.NavigationItem
 import abhishek.pathak.dailyjournal.ui.theme.ColumnBackground
 import abhishek.pathak.dailyjournal.ui.theme.InsideAppBackground
+import abhishek.pathak.dailyjournal.ui.theme.Journal_list_Color
 import abhishek.pathak.dailyjournal.ui.theme.dp_10
 import abhishek.pathak.dailyjournal.ui.theme.dp_12
 import abhishek.pathak.dailyjournal.ui.theme.dp_15
@@ -25,6 +26,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -67,8 +69,7 @@ fun ListofJournalsPage(navController: NavController) {
             .background(InsideAppBackground),
         //horizontalAlignment = Alignment.CenterHorizontally,
         //verticalArrangement = Arrangement.Center
-
-    ) {
+        ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -109,7 +110,8 @@ fun ListofJournalsPage(navController: NavController) {
                         .constrainAs(image3) {
                             top.linkTo(parent.top)
                             end.linkTo(image2.start)
-                        })
+                        }
+                )
             }
 
         }
@@ -124,12 +126,6 @@ fun ListofJournalsPage(navController: NavController) {
             )
         SearchBar(onSearch = {})
         Stories()
-
-
-
-
-
-
     }
 }
 @OptIn(ExperimentalMaterial3Api::class)
@@ -162,10 +158,8 @@ fun SearchBar(onSearch:(String)->Unit){
                     .padding(dp_6),
                 placeholder = { Text(stringResource(id = R.string.search), fontSize = sp_20,color= Color.LightGray) },
               )
-                        
         }
     }
-
 }
 @Composable
 fun Stories(){
@@ -186,15 +180,13 @@ fun Stories(){
           Row(modifier = Modifier
               .wrapContentSize()
               .padding(top = dp_20, start = dp_15, bottom = dp_20)) {
-              Column() {
-
-
-              Text(
+              Column {
+                  Text(
                   modifier = Modifier
                       .padding(top = dp_25, start = dp_12, end = dp_30)
                       .drawBehind {
                           drawCircle(
-                              color = Color.Red,
+                              color = Journal_list_Color,
                               radius = this.size.maxDimension
                           )
                       },
@@ -226,18 +218,20 @@ fun Stories(){
                       modifier = Modifier.padding( start= dp_10)
                   )
 
-                  }}
+              }
+          }
           }
       }
   }
 
 
-    @Preview
+
+
+
+@Preview
     @Composable
     fun ShowListofJournals() {
         Box {
             ListofJournalsPage(rememberNavController())
         }
-
-
     }
