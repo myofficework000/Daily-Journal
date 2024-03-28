@@ -1,6 +1,5 @@
 package abhishek.pathak.dailyjournal.ui.theme
 
-import android.widget.TextView
 import androidx.compose.ui.graphics.Color
 
 val Purple80 = Color(0xFFD0BCFF)
@@ -19,9 +18,9 @@ val Blue40 = Color(0xFF54E2DF)
 val Black = Color(0xFF000000)
 val White = Color(0xFFFFFFFF)
 val WaterMark = Color(0xFFC5C5C5)
-val TextColor=Color(0xFF1A7888)
-val InsideAppBackground=Color(0xFF0A434D)
+val TextColor = Color(0xFF1A7888)
+val InsideAppBackground = Color(0xFF0A434D)
 val PopUpBGGray = Color(0xFFF3F3F3)
 val JournalBackgroundBlue = Color(0xFFA8E8F0)
 val JournalTextBlue = Color(0xFF1E6E79)
-val Journal_list_Color=Color(0xFFA693C9)
+val Journal_list_Color = Color(0xFFA693C9)

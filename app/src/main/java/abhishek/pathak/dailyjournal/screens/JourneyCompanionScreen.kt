@@ -14,7 +14,6 @@ import abhishek.pathak.dailyjournal.ui.theme.sp_20
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -42,11 +41,11 @@ import androidx.navigation.compose.rememberNavController
 @Preview
 @Composable
 fun ShowJourneyCompanionScreenPrev() {
-    JourneyCompanionScreen(rememberNavController())
+    JourneyCompanionScreen(rememberNavController(),"100")
 
 }
 @Composable
-fun JourneyCompanionScreen(navController: NavController) {
+fun JourneyCompanionScreen(navController: NavController, journeyId: String?) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -68,8 +67,10 @@ fun JourneyCompanionScreen(navController: NavController) {
                     .size(dp_50)
                     .padding(top = dp_20, end = dp_6)
             )
+            val textJourney = "${stringResource(id = R.string.Journey)} $journeyId"
+
             Text(
-                text = stringResource(id = R.string.Journey),
+                text = textJourney,
                 color = TextColor,
                 fontSize = sp_20,
                 fontWeight = FontWeight.Bold,
@@ -84,8 +85,6 @@ fun JourneyCompanionScreen(navController: NavController) {
                 .height(dp_400)
                 .padding(dp_16)
         )
-
-
 
         Text(
             text = stringResource(id = R.string.Life_Companion),

@@ -214,7 +214,7 @@ internal fun StartJourney(navController: NavController) {
                 .padding(dp_0, dp_40, dp_0, dp_0))
 
 
-        Button(onClick =  { navController.navigate(NavigationItem.GET_NOTIFIED.route) },
+        Button(onClick = { navController.navigate(NavigationItem.GET_NOTIFIED.route) },
             colors = ButtonDefaults.buttonColors(JournalTextBlue),
             contentPadding = PaddingValues(dp_50, dp_16),
             modifier = Modifier

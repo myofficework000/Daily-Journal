@@ -51,7 +51,6 @@ internal fun WelcomeScreen(navController: NavController) {
                 }
         )
 
-
         Text(
             "Welcome to Journey!",
             fontSize = 40.sp,
@@ -78,7 +77,7 @@ internal fun WelcomeScreen(navController: NavController) {
         )
         Button(
             onClick = {
-                navController.navigate(NavigationItem.JOURNEY_LIFE.route)
+                navController.navigate("${NavigationItem.JOURNEY_LIFE.route}/100")
             },
             modifier = Modifier.constrainAs(button1) {
                 top.linkTo(text2.bottom, margin = 16.dp)

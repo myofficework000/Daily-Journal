@@ -15,7 +15,6 @@ import abhishek.pathak.dailyjournal.screens.UserBottomSheetWithLazyList
 import abhishek.pathak.dailyjournal.screens.WelcomeScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -34,8 +33,17 @@ fun AppNavHost(
         composable(NavigationItem.WELCOME.route) {
             WelcomeScreen(navHostController)
         }
+        composable("${NavigationItem.JOURNEY_LIFE.route}/{journeyId}") { backStackEntry ->
+            JourneyCompanionScreen(
+                navHostController,
+                backStackEntry.arguments?.getString("journeyId")
+            )
+        }
         composable(NavigationItem.DASHBOARD.route) {
             DashboardScreen()
+        }
+        composable(NavigationItem.START_JOURNEY.route) {
+            StartJourney(navHostController)
         }
         composable(NavigationItem.GET_NOTIFIED.route) {
             GetNotifiedScreen(navHostController)
@@ -43,34 +51,28 @@ fun AppNavHost(
         composable(NavigationItem.SYNC_WITH_WIFI.route) {
             SyncWifiUI(navHostController)
         }
-        composable(NavigationItem.KEEP_MEMORY.route){
+        composable(NavigationItem.KEEP_MEMORY.route) {
             KeepMemoryForever(navHostController)
         }
-        composable(NavigationItem.CREATE_PROFILE.route){
+        composable(NavigationItem.CREATE_PROFILE.route) {
             CreateProfile(navHostController)
         }
-        composable(NavigationItem.START_JOURNEY.route){
-            StartJourney(navHostController)
-        }
-        composable(NavigationItem.PASSCODE.route){
+        composable(NavigationItem.PASSCODE.route) {
             SetPassCodeScreen(navHostController)
         }
-        composable(NavigationItem.START_YOUR_JOURNEY.route){
+        composable(NavigationItem.START_YOUR_JOURNEY.route) {
             StartYourJourneyScreen(navHostController)
         }
-        composable(NavigationItem.JOURNEY_LIFE.route){
-            JourneyCompanionScreen(navHostController)
-        }
-        composable(NavigationItem.JOURNALS_LIST.route){
+        composable(NavigationItem.JOURNALS_LIST.route) {
             ListofJournalsPage(navHostController)
         }
-        composable(NavigationItem.SAFE_PRIVATE.route){
+        composable(NavigationItem.SAFE_PRIVATE.route) {
             SafePrivateScreen(navHostController)
         }
-        composable(NavigationItem.USER_BOTTOM_SHEET.route){
+        composable(NavigationItem.USER_BOTTOM_SHEET.route) {
             UserBottomSheetWithLazyList(navHostController)
         }
-        composable(NavigationItem.CANCEL_ANYTIME.route){
+        composable(NavigationItem.CANCEL_ANYTIME.route) {
             SafePrivateScreen(navHostController)
         }
     }
